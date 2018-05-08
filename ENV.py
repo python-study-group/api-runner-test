@@ -1,5 +1,9 @@
 import configparser
 
+import logging
+logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s :  %(message)s')
+logger = logging.getLogger(__name__)
+
 # 告诉编译器这是全局变量a
 global baseUrl
 
@@ -87,6 +91,6 @@ def init(environment):
     domain = cf[environment]['domain']
     setDomain(domain)
 
-    print(baseUrl)
-    print(deviceId)
-    print(version)
+    logger.info(baseUrl)
+    logger.info(deviceId)
+    logger.info(version)
