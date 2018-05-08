@@ -4,6 +4,5 @@ import configparser
 import TestAll
 import ENV
 
-
-ENV.init('sit')
+ENV.init('uat')
 TestAll.processAll();
