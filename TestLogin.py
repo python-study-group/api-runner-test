@@ -17,7 +17,7 @@ def process():
 
     res_data = urllib.request.urlopen(req)
     response_bytes = res_data.read()
-    print(response_bytes)
+    #print(response_bytes)
 
     str_from_utf_8 = response_bytes.decode(encoding="utf-8")
     print(str_from_utf_8)

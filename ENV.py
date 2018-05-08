@@ -1,3 +1,5 @@
+import configparser
+
 # 告诉编译器这是全局变量a
 global baseUrl
 
@@ -66,3 +68,25 @@ def getToken():
     # 同样告诉编译器我在这个方法中使用的a是刚才定义的全局变量a,并返回全局变量a,而不是方法内部的局部变量.
     global token
     return token
+
+
+
+def init(environment):
+    cf = configparser.ConfigParser()
+    cf.read('config/env-config.ini')
+
+    baseUrl = cf[environment]['baseUrl']
+    setBaseUrl(baseUrl);
+
+    deviceId = cf[environment]['deviceId']
+    setDeviceId(deviceId);
+
+    version = cf[environment]['version']
+    setVersion(version)
+
+    domain = cf[environment]['domain']
+    setDomain(domain)
+
+    print(baseUrl)
+    print(deviceId)
+    print(version)
