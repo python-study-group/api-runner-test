@@ -27,7 +27,7 @@ def process():
     logger.info(str_from_utf_8)
 
     response_json = json.loads(str_from_utf_8)
-    assert 1 == response_json['error_code'], logger.error("error_code is not 0");
+    assert 0 == response_json['error_code'], logger.error("error_code is not 0");
 
     token = response_json['data']['token']
     logger.info('token is : ' + token)
