@@ -73,9 +73,23 @@ def getToken():
     global token
     return token
 
+# 告诉编译器这是全局变量a
+global environment
+
+def setEnvironment(value):
+    # 告诉编译器我在这个方法中使用的a是刚才定义的全局变量a,而不是方法内部的局部变量.
+    global environment
+    environment = value
+
+def getEnvironment():
+    # 同样告诉编译器我在这个方法中使用的a是刚才定义的全局变量a,并返回全局变量a,而不是方法内部的局部变量.
+    global environment
+    return environment
 
 
 def init(environment):
+
+    setEnvironment(environment)
     cf = configparser.ConfigParser()
     cf.read('config/env-config.ini')
 

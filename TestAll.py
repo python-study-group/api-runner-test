@@ -8,6 +8,14 @@ import TestbindUpushDeviceToken
 import TestgetShowTabTaskCount
 import TestgetIndexNoticeList
 import Testsignin
+import TestgetPushList
+import TestreadAllPushs
+import TestgetPushDetail
+import TestdeletePushs
+import TestresetPassword
+import TestgetHotwords
+import TestlistTopClassify
+import Testsearch
 
 def processAll():
     TestLogin.process();
@@ -20,3 +28,11 @@ def processAll():
     TestgetShowTabTaskCount.process();
     TestgetIndexNoticeList.process();
     Testsignin.process();
+    TestgetPushList.process();
+    TestreadAllPushs.process();
+    TestgetPushDetail.process();
+    TestdeletePushs.process();
+    TestresetPassword.process();
+    TestgetHotwords.process();
+    TestlistTopClassify.process();
+    Testsearch.process();

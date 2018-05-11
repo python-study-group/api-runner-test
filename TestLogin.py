@@ -1,6 +1,7 @@
 import urllib.request
 import ENV
 import json
+import configparser
 
 import logging
 logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s :  %(message)s')
@@ -9,7 +10,12 @@ logger = logging.getLogger(__name__)
 def process():
     logger.info("TestLogin.py process~~~")
     logger.info('baseUrl is : ' + ENV.getBaseUrl())
-    send_data = "username=jinron_EL&password=Aa123456";
+
+    cf = configparser.ConfigParser()
+    cf.read('config/env-config.ini')
+    username = cf[ENV.getEnvironment()]['username']
+    password = cf[ENV.getEnvironment()]['password']
+    send_data = "username="+ username + "&password="+password;
     #send_data_urlencode = urllib.urlencode(send_data);
     send_data_bytes = bytes(send_data, encoding='utf8')
 
